@@ -1,10 +1,10 @@
-[[Desarrollador](https://github.com/aquileslh)]
 # Grails2-postgres
 
 Desarrollo de proyecto con grails 2.2.2 y postgres 9.2
 
 En rama master se encuentra la configuración inicial
 * Conexion con postgres 9.4
+* Jar de Postgresql incluido en lib/
 * Primer dominio creado
 
 Inicio

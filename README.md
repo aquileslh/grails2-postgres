@@ -16,3 +16,8 @@ Para usar el proyecto:
     Creacion de base de datos a la cual se conectara
     En terminal dentro de la carpeta grails2-postgres ejecutar:
     grails run-app
+
+## Ramas
+
+La rama agenda contiene un ejemplo de agenda de cracion de eventos
+usando conceptos basicos de grails

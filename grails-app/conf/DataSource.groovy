@@ -1,20 +1,26 @@
 dataSource {
     pooled = true
-    driverClassName = "org.h2.Driver"
-    username = "sa"
-    password = ""
+    //driverClassName = "org.h2.Driver"
+    driverClassName = "org.postgresql.Driver"
+    username = "postgres"
+    password = "postgres"
+    dialect = net.sf.hibernate.dialect.PostgreSQLDialect
+    //dialect = net.kaleidos.hibernate.PostgresqlExtensionsDialect
 }
 hibernate {
     cache.use_second_level_cache = true
     cache.use_query_cache = false
     cache.region.factory_class = 'net.sf.ehcache.hibernate.EhCacheRegionFactory'
+    //cache.provider_class='com.opensymphony.oscache.hibernate.OSCacheProvider'
 }
 // environment specific settings
 environments {
     development {
         dataSource {
             dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+            //url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+            //url: jdbc:postgresql://localhost:5432/db_name
+            url="jdbc:postgresql://localhost:5432/agenda"
         }
     }
     test {

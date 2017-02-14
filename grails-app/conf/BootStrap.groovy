@@ -60,7 +60,7 @@ class BootStrap {
             webSite : 'http://www.computing.com.mx',
             description: 'software engineering')
         s2.save()
-*/
+
         def s1 = Sponsor.findByName('Contegix')
         def s2 = Sponsor.findByName('computing incorporated')
         def sp1 = new Sponsorship(event : g1,
@@ -74,7 +74,8 @@ class BootStrap {
             contributionType : 'Venue',
             description: 'puedes jugar para el moscone')
         sp2.save()
-        
+*/
+
     }//Fin del init 
 
     def destroy = {

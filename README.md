@@ -14,5 +14,8 @@ Para usar el proyecto:
 
     Instalacion de postgres
     Creacion de base de datos a la cual se conectara
+    Modificar archivo DataSource 
+    * Usuario y password para acceder a la base de datos
+    * Nombre de la base de datos a la cual se conectara
     En terminal dentro de la carpeta grails2-postgres ejecutar:
     grails run-app

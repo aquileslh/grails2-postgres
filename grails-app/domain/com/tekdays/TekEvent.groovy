@@ -22,6 +22,7 @@ class TekEvent {
 		sponsorships nullable : true
 		tasks nullable : true
 		messages nullable : true
+		respondents nullable : true
 	}
 
 	static hasMany = [volunteers : TekUser,

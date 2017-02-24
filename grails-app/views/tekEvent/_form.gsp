@@ -47,7 +47,7 @@
 		<g:message code="tekEvent.startDate.label" default="Start Date" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:datePicker name="startDate" precision="day"  value="${tekEventInstance?.startDate}"  />
+	<g:datePicker name="startDate" precision="day"  value="${tekEventInstance?.startDate}" years="${2010..2020}"  />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: tekEventInstance, field: 'endDate', 'error')} required">

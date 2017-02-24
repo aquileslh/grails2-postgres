@@ -1,7 +1,11 @@
 package com.tekdays
 
+import static org.springframework.http.HttpStatus.*
+//import grails.transaction.Transactional
+import org.springframework.transaction.annotation.Transactional
 import org.springframework.dao.DataIntegrityViolationException
 
+@Transactional(readOnly = true)
 class TekEventController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -20,7 +24,9 @@ class TekEventController {
     }
 
     def save() {
+        println "params -> $params"
         def tekEventInstance = new TekEvent(params)
+        println "tekEvent-> $tekEventInstance"
         if (!tekEventInstance.save(flush: true)) {
             render(view: "create", model: [tekEventInstance: tekEventInstance])
             return

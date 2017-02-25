@@ -22,52 +22,60 @@
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list task">
-			
+
 				<g:if test="${taskInstance?.title}">
 				<li class="fieldcontain">
 					<span id="title-label" class="property-label"><g:message code="task.title.label" default="Title" /></span>
-					
+
 						<span class="property-value" aria-labelledby="title-label"><g:fieldValue bean="${taskInstance}" field="title"/></span>
-					
+
 				</li>
 				</g:if>
-			
+
 				<g:if test="${taskInstance?.notes}">
 				<li class="fieldcontain">
 					<span id="notes-label" class="property-label"><g:message code="task.notes.label" default="Notes" /></span>
-					
+
 						<span class="property-value" aria-labelledby="notes-label"><g:fieldValue bean="${taskInstance}" field="notes"/></span>
-					
+
 				</li>
 				</g:if>
-			
+
 				<g:if test="${taskInstance?.assignedTo}">
 				<li class="fieldcontain">
 					<span id="assignedTo-label" class="property-label"><g:message code="task.assignedTo.label" default="Assigned To" /></span>
-					
+
 						<span class="property-value" aria-labelledby="assignedTo-label"><g:link controller="tekUser" action="show" id="${taskInstance?.assignedTo?.id}">${taskInstance?.assignedTo?.encodeAsHTML()}</g:link></span>
-					
+
 				</li>
 				</g:if>
-			
+
 				<g:if test="${taskInstance?.dueDate}">
 				<li class="fieldcontain">
 					<span id="dueDate-label" class="property-label"><g:message code="task.dueDate.label" default="Due Date" /></span>
-					
+
 						<span class="property-value" aria-labelledby="dueDate-label"><g:formatDate date="${taskInstance?.dueDate}" /></span>
-					
+
 				</li>
 				</g:if>
-			
+
 				<g:if test="${taskInstance?.event}">
 				<li class="fieldcontain">
 					<span id="event-label" class="property-label"><g:message code="task.event.label" default="Event" /></span>
-					
+
 						<span class="property-value" aria-labelledby="event-label"><g:link controller="tekEvent" action="show" id="${taskInstance?.event?.id}">${taskInstance?.event?.encodeAsHTML()}</g:link></span>
-					
+
 				</li>
 				</g:if>
-			
+
+				<g:if test="${taskInstance?.completed}">
+					<li class="fieldcontain">
+					<span id="completed-label" class="property-label"><g:message code="task.completed.label" default="Completed" /></span>
+
+					<span class="property-value" aria-labelledby="completed-label"> <g:formatBoolean boolean="${taskInstance?.completed}" true="Yes" false="No" /></span>
+					</li>
+				</g:if>
+
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

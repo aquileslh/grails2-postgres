@@ -13,7 +13,7 @@
 <div class="fieldcontain ${hasErrors(bean: taskInstance, field: 'notes', 'error')} ">
 	<label for="notes">
 		<g:message code="task.notes.label" default="Notes" />
-		
+
 	</label>
 	<g:textArea name="notes" cols="40" rows="5" maxlength="5000" value="${taskInstance?.notes}"/>
 </div>
@@ -21,7 +21,7 @@
 <div class="fieldcontain ${hasErrors(bean: taskInstance, field: 'assignedTo', 'error')} ">
 	<label for="assignedTo">
 		<g:message code="task.assignedTo.label" default="Assigned To" />
-		
+
 	</label>
 	<g:select id="assignedTo" name="assignedTo.id" from="${com.tekdays.TekUser.list()}" optionKey="id" value="${taskInstance?.assignedTo?.id}" class="many-to-one" noSelection="['null': '']"/>
 </div>
@@ -29,7 +29,7 @@
 <div class="fieldcontain ${hasErrors(bean: taskInstance, field: 'dueDate', 'error')} ">
 	<label for="dueDate">
 		<g:message code="task.dueDate.label" default="Due Date" />
-		
+
 	</label>
 	<g:datePicker name="dueDate" precision="day"  value="${taskInstance?.dueDate}" default="none" noSelection="['': '']" />
 </div>
@@ -42,3 +42,10 @@
 	<g:select id="event" name="event.id" from="${com.tekdays.TekEvent.list()}" optionKey="id" required="" value="${taskInstance?.event?.id}" class="many-to-one"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: taskInstance, field: 'completed',
+'error')} ">
+<label for="completed">
+<g:message code="task.completed.label" default="Completed" />
+</label>
+<g:checkBox name="completed" value="${taskInstance?.completed}" />
+</div>
